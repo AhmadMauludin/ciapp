@@ -7,11 +7,31 @@ use CodeIgniter\Controller;
 
 class Barang extends Controller
 {
+    protected $barangModel;
+
+    public function __construct()
+    {
+        $this->barangModel = new BarangModel();
+    }
+
     public function index()
     {
-        $data['title']     = 'Data Barang';
-        $model = new BarangModel();
-        $data['barang'] = $model->findAll();
+        $keyword = $this->request->getGet('keyword');
+        $perPage = 10; // Jumlah data per halaman
+
+        if ($keyword) {
+            $barang = $this->barangModel->search($keyword, $perPage);
+        } else {
+            $barang = $this->barangModel->paginate($perPage);
+        }
+
+        $data = [
+            'title'  => 'Data Barang',
+            'barang' => $barang,
+            'pager'  => $this->barangModel->pager, // Untuk pagination
+            'keyword' => $keyword
+        ];
+
         return view('barang/index', $data);
     }
 

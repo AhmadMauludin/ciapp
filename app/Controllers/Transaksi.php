@@ -11,13 +11,38 @@ use CodeIgniter\Controller;
 
 class Transaksi extends Controller
 {
-    public function index()
+    public function index2()
     {
         $data['title']     = 'Data transaksi';
         $model = new TransaksiModel();
         $data['transaksi'] = $model->getTransaksiJoin(); // Ambil data dari model
 
         return view('transaksi/index', $data); // Kirim data ke view
+    }
+
+    protected $pembeliModel;
+    protected $transaksiModel;
+    protected $pegawaiModel;
+
+    public function __construct()
+    {
+        $this->pembeliModel = new PembeliModel();
+        $this->transaksiModel = new TransaksiModel();
+        $this->pegawaiModel = new PegawaiModel();
+    }
+
+    public function index()
+    {
+        $keyword = $this->request->getGet('keyword');
+        $perPage = 10; // Tentukan jumlah data per halaman
+
+        $data = [
+            'transaksi' => $this->transaksiModel->getAllTransaksi($keyword, $perPage),
+            'pager'     => $this->transaksiModel->pager,
+            'title'     => 'Data Transaksi',
+        ];
+
+        return view('transaksi/index', $data);
     }
 
 

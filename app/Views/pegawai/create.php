@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Tambah Pegawai</title>
-</head>
+<?= view('includes/header') ?>
 
 <body>
     <h2>Tambah Pegawai</h2>
@@ -26,5 +21,4 @@
         <button type="submit">Simpan</button>
     </form>
 </body>
-
-</html>
+<?= view('includes/footer') ?>

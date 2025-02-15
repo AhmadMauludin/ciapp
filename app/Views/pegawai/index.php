@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Data Pegawai</title>
-</head>
+<?= view('includes/header') ?>
 
 <body>
+
     <h2>Data Pegawai</h2>
+
     <a href="<?= base_url('/pegawai/create') ?>">Tambah Pegawai</a>
+
+    <form action="<?= base_url('pegawai') ?>" method="GET">
+        <input type="text" name="keyword" placeholder="Cari pegawai..." value="<?= esc($_GET['keyword'] ?? '') ?>">
+        <button type="submit">Cari</button>
+    </form>
+
     <table border="1">
         <tr>
             <th>ID</th>
@@ -16,6 +19,8 @@
             <th>Foto</th>
             <th>Aksi</th>
         </tr>
+        <?php $no = 1 + (5 * ($pager->getCurrentPage() - 1)); ?>
+
         <?php foreach ($pegawai as $row): ?>
             <tr>
                 <td><?= $row['id'] ?></td>
@@ -29,6 +34,8 @@
             </tr>
         <?php endforeach; ?>
     </table>
+    <div>
+        <?= $pager->links(); ?>
+    </div>
 </body>
-
-</html>
+<?= view('includes/footer') ?>

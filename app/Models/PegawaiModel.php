@@ -14,4 +14,11 @@ class PegawaiModel extends Model
     {
         return $this->where('nama', $nama)->first();
     }
+
+    public function search($keyword, $perPage)
+    {
+        return $this->like('nama', $keyword)
+            ->orLike('bagian', $keyword)
+            ->paginate($perPage);
+    }
 }

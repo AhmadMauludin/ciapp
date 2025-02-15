@@ -55,7 +55,7 @@ CREATE TABLE `beli` (
   `qty` int(5) NOT NULL,
   `jumlah` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `beli` (
 
 LOCK TABLES `beli` WRITE;
 /*!40000 ALTER TABLE `beli` DISABLE KEYS */;
-INSERT INTO `beli` VALUES (6,9,2,1,100000),(10,13,3,3,15000);
+INSERT INTO `beli` VALUES (6,9,2,1,100000),(10,13,3,3,15000),(12,30,3,2,10000),(13,30,2,2,200000);
 /*!40000 ALTER TABLE `beli` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +82,7 @@ CREATE TABLE `pegawai` (
   `password` varchar(255) NOT NULL,
   `foto` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,32 +122,6 @@ INSERT INTO `pembeli` VALUES (1,'Muhammad Aris','2025-02-13','1739513012_ae2a980
 UNLOCK TABLES;
 
 --
--- Table structure for table `pembelian`
---
-
-DROP TABLE IF EXISTS `pembelian`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pembelian` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `id_barang` int(10) NOT NULL,
-  `qty` int(5) NOT NULL,
-  `harga` int(10) NOT NULL,
-  `id_transaksi` int(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pembelian`
---
-
-LOCK TABLES `pembelian` WRITE;
-/*!40000 ALTER TABLE `pembelian` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pembelian` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `transaksi`
 --
 
@@ -168,7 +142,7 @@ CREATE TABLE `transaksi` (
   `kembali` int(10) DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -177,7 +151,7 @@ CREATE TABLE `transaksi` (
 
 LOCK TABLES `transaksi` WRITE;
 /*!40000 ALTER TABLE `transaksi` DISABLE KEYS */;
-INSERT INTO `transaksi` VALUES (9,1,4,'2025-02-14','16:55:00',100000,30000,70000,'cash',75000,5000,'1739526958_94c8dfa0f940993fc617.png');
+INSERT INTO `transaksi` VALUES (9,1,4,'2025-02-14','16:55:00',100000,30000,70000,'cash',75000,5000,'1739526958_94c8dfa0f940993fc617.png'),(30,1,4,'2025-02-15','19:52:30',210000,10000,200000,'cash',200000,0,'');
 /*!40000 ALTER TABLE `transaksi` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -190,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-15  0:49:35
+-- Dump completed on 2025-02-15 22:03:11

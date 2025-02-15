@@ -7,11 +7,30 @@ use CodeIgniter\Controller;
 
 class Pembeli extends Controller
 {
+    protected $pembeliModel;
+
+    public function __construct()
+    {
+        $this->pembeliModel = new PembeliModel();
+    }
+
     public function index()
     {
-        $data['title']     = 'Data Pembeli';
-        $model = new PembeliModel();
-        $data['pembeli'] = $model->findAll();
+        $keyword = $this->request->getGet('keyword');
+        $perPage = 10; // Jumlah data per halaman
+
+        if ($keyword) {
+            $pembeli = $this->pembeliModel->search($keyword, $perPage);
+        } else {
+            $pembeli = $this->pembeliModel->paginate($perPage);
+        }
+
+        $data = [
+            'title'  => 'Data Pembeli',
+            'pembeli' => $pembeli,
+            'pager'  => $this->pembeliModel->pager, // Untuk pagination
+            'keyword' => $keyword
+        ];
         return view('pembeli/index', $data);
     }
 

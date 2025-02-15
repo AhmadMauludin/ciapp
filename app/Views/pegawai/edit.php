@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Edit Pegawai</title>
-</head>
+<?= view('includes/header') ?>
 
 <body>
     <h2>Edit Pegawai</h2>
@@ -26,5 +21,4 @@
         <button type="submit">Update</button>
     </form>
 </body>
-
-</html>
+<?= view('includes/footer') ?>

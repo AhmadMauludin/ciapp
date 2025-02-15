@@ -7,6 +7,12 @@
             <h4 class="card-title">Data Pembeli</h4>
         </div>
         <div class="card-body">
+
+            <form action="<?= base_url('pembeli') ?>" method="GET">
+                <input type="text" name="keyword" placeholder="Cari pembeli..." value="<?= esc($_GET['keyword'] ?? '') ?>">
+                <button type="submit">Cari</button>
+            </form>
+
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
                     <thead>
@@ -18,6 +24,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php $no = 1 + (5 * ($pager->getCurrentPage() - 1)); ?>
 
                         <?php foreach ($pembeli as $row): ?>
                             <tr>
@@ -32,6 +39,9 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+                <div>
+                    <?= $pager->links(); ?>
+                </div>
             </div>
         </div>
     </div>

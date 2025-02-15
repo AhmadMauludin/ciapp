@@ -22,8 +22,15 @@ class Beli extends Controller
 
     public function index()
     {
-        $data['title'] = 'Data Pembelian';
-        $data['beli'] = $this->beliModel->getAll();
+        $keyword = $this->request->getGet('keyword');
+        $perPage = 10; // Jumlah data per halaman
+
+        $data = [
+            'beli'  => $this->beliModel->getAllBeli($keyword, $perPage),
+            'pager' => $this->beliModel->pager,
+            'title' => 'Data Pembelian Barang',
+        ];
+
         return view('beli/index', $data);
     }
 

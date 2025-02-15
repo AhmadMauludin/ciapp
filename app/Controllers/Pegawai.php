@@ -7,10 +7,30 @@ use CodeIgniter\Controller;
 
 class Pegawai extends Controller
 {
+    protected $pegawaiModel;
+
+    public function __construct()
+    {
+        $this->pegawaiModel = new PegawaiModel();
+    }
+
     public function index()
     {
-        $model = new PegawaiModel();
-        $data['pegawai'] = $model->findAll();
+        $keyword = $this->request->getGet('keyword');
+        $perPage = 10; // Jumlah data per halaman
+
+        if ($keyword) {
+            $pegawai = $this->pegawaiModel->search($keyword, $perPage);
+        } else {
+            $pegawai = $this->pegawaiModel->paginate($perPage);
+        }
+
+        $data = [
+            'title'  => 'Data pegawai',
+            'pegawai' => $pegawai,
+            'pager'  => $this->pegawaiModel->pager, // Untuk pagination
+            'keyword' => $keyword
+        ];
         return view('pegawai/index', $data);
     }
 
