@@ -18,7 +18,7 @@ class Home extends BaseController
     }
     public function about(): string
     {
-        return view('includes/header', ['title' => 'Halaman Utama'])
+        return view('includes/header', ['title' => 'Halaman About'])
             . view('about')
             . view('includes/footer');
     }
