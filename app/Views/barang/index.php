@@ -1,4 +1,5 @@
-<?= view('includes/header') ?>
+<?= $this->extend('includes/template'); ?>
+<?= $this->section('content'); ?>
 <div class="container pt-5">
 
     <a href="<?= site_url('barang/create') ?>" class="btn btn-success mb-2">Tambah barang</a>
@@ -47,4 +48,4 @@
         </div>
     </div>
 </div>
-<?= view('includes/footer') ?>
+<?= $this->endSection(); ?>

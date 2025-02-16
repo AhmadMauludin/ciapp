@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 // Backup db
 $routes->get('/backup', 'Backup::database');
+$routes->get('/lay', 'Home::index1');
 
 // Variabel Filter
 $authFilter = ['filter' => 'auth'];

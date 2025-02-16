@@ -1,4 +1,5 @@
-<?= view('includes/header') ?>
+<?= $this->extend('includes/template'); ?>
+<?= $this->section('content'); ?>
 <h2>Detail Transaksi</h2>
 <p><strong>Nama Pembeli:</strong> <?= $transaksi['nama_pembeli'] ?></p>
 <p><strong>Nama Pegawai:</strong> <?= $transaksi['nama_pegawai'] ?></p>
@@ -59,4 +60,4 @@
 
 <a href="<?= site_url('transaksi/edit/' . $transaksi['id']) ?>" class="btn btn-success">Lanjut ke pembayaran</a>
 
-<?= view('includes/footer') ?>
+<?= $this->endSection(); ?>

@@ -1,4 +1,5 @@
-<?= view('includes/header') ?>
+<?= $this->extend('includes/template'); ?>
+<?= $this->section('content'); ?>
 <h2>Data Pembelian</h2>
 <form action="<?= base_url('beli') ?>" method="GET">
     <input type="text" name="keyword" placeholder="Cari nama barang atau jumlah..." value="<?= esc($_GET['keyword'] ?? '') ?>">
@@ -31,4 +32,4 @@
 <div>
     <?= $pager->links(); ?>
 </div>
-<?= view('includes/footer') ?>
+<?= $this->endSection(); ?>

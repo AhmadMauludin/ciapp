@@ -1,4 +1,5 @@
-<?= view('includes/header') ?>
+<?= $this->extend('includes/template'); ?>
+<?= $this->section('content'); ?>
 
 <body>
     <h2>Edit Pegawai</h2>
@@ -21,4 +22,4 @@
         <button type="submit">Update</button>
     </form>
 </body>
-<?= view('includes/footer') ?>
+<?= $this->endSection(); ?>

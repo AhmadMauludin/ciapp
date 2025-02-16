@@ -1,4 +1,5 @@
-<?= view('includes/header') ?>
+<?= $this->extend('includes/template'); ?>
+<?= $this->section('content'); ?>
 <div class="container p-5">
     <a href="<?= base_url('transaksi'); ?>" class="btn btn-secondary mb-2">Kembali</a>
     <div class="card">
@@ -44,4 +45,4 @@
         </div>
     </div>
 </div>
-<?= view('includes/footer') ?>
+<?= $this->endSection(); ?>

@@ -1,3 +1,5 @@
+<?= $this->extend('includes/template'); ?>
+<?= $this->section('content'); ?>
 <h2>Edit Pembelian</h2>
 <form action="<?= base_url('beli/update/' . $beli['id']) ?>" method="post">
     <input type="hidden" name="id_transaksi" value="<?= $beli['id_transaksi'] ?>">
@@ -16,3 +18,4 @@
 
     <button type="submit">Simpan Perubahan</button>
 </form>
+<?= $this->endSection(); ?>

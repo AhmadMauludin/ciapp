@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="id">
+<?= $this->extend('includes/template'); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-</head>
-
+<?= $this->section('content'); ?>
 <?php if (session()->getFlashdata('error')): ?>
     <p style="color:red"><?= session()->getFlashdata('error') ?></p>
 <?php endif; ?>
 
-<body>
-    <h2>Selamat Datang, <?= session()->get('nama') ?></h2>
-    <p>Bagian: <?= session()->get('bagian') ?></p>
-    <a href="<?= base_url('/logout') ?>">Logout</a>
-</body>
+<p>Selamat Datang, <b><?= session()->get('nama') ?></b> Bag. <?= session()->get('bagian') ?></p>
+<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est
+    non commodo luctus. Duis mollis, est non commodo luctus.Duis mollis, est non commodo
+    luctus.
+</p>
 
-</html>
+<?= $this->endSection(); ?>

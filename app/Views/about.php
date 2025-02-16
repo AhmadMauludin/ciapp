@@ -1,1 +1,4 @@
-<center><b>NAMA SAYA MALDIN</b></center>
+<?= $this->extend('includes/template'); ?>
+<?= $this->section('content'); ?>
+<center><b>CiapMart</b> Version 1.7.0</center>
+<?= $this->endSection(); ?>

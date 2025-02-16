@@ -1,4 +1,5 @@
-<?= view('includes/header') ?>
+<?= $this->extend('includes/template'); ?>
+<?= $this->section('content'); ?>
 <form action="<?= site_url('beli/store') ?>" method="post">
     <label>Transaksi:</label>
     <select name="id_transaksi">
@@ -19,4 +20,4 @@
 
     <button type="submit">Simpan</button>
 </form>
-<?= view('includes/footer') ?>
+<?= $this->endSection(); ?>

@@ -6,20 +6,14 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('includes/header', ['title' => 'Halaman Utama'])
-            . view('dashboard')
-            . view('includes/footer');
+        return view('dashboard', ['title' => 'Dashboard']);
     }
     public function dashboard(): string
     {
-        return view('includes/header', ['title' => 'Halaman Dashboard'])
-            . view('dashboard')
-            . view('includes/footer');
+        return view('dashboard', ['title' => 'Dashboard']);
     }
     public function about(): string
     {
-        return view('includes/header', ['title' => 'Halaman About'])
-            . view('about')
-            . view('includes/footer');
+        return view('about', ['title' => 'About']);
     }
 }
