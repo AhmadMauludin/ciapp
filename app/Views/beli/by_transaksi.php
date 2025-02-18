@@ -1,4 +1,4 @@
-<?= $this->extend('includes/template'); ?>
+<?= $this->extend('layouts/main'); ?>
 <?= $this->section('content'); ?>
 <h2>Detail Transaksi</h2>
 <p><strong>Nama Pembeli:</strong> <?= $transaksi['nama_pembeli'] ?></p>

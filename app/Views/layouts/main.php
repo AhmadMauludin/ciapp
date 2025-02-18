@@ -50,7 +50,7 @@
                         <i class="bx bx-chevron-left bx-sm align-middle"></i>
                     </a>
                 </div>
-                <?= view('includes/menu') ?>
+                <?= view('layouts/menu') ?>
             </aside>
 
             <!-- Layout container -->

@@ -1,4 +1,4 @@
-<?= $this->extend('includes/template'); ?>
+<?= $this->extend('layouts/main'); ?>
 <?= $this->section('content'); ?>
 <div class="container p-5">
     <a href="<?= base_url('barang'); ?>" class="btn btn-secondary mb-2">Kembali</a>

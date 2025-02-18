@@ -1,4 +1,4 @@
-<?= $this->extend('includes/template'); ?>
+<?= $this->extend('layouts/main'); ?>
 <?= $this->section('content'); ?>
 <form action="<?= site_url('beli/store') ?>" method="post">
     <label>Transaksi:</label>

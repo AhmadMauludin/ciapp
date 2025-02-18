@@ -1,4 +1,4 @@
-<?= $this->extend('includes/template'); ?>
+<?= $this->extend('layouts/main'); ?>
 <?= $this->section('content'); ?>
 <h2>Edit Pembelian</h2>
 <form action="<?= base_url('beli/update/' . $beli['id']) ?>" method="post">
