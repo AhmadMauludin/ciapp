@@ -1,28 +1,32 @@
 <?= $this->extend('layouts/main'); ?>
 <?= $this->section('content'); ?>
-<div class="container p-5">
-    <a href="<?= base_url('pembeli'); ?>" class="btn btn-secondary mb-2">Kembali</a>
-    <div class="card">
-        <div class="card-header bg-info text-white">
-            <h4 class="card-title">Tambah Data Pembeli</h4>
+<div class="card-body">
+    <form action="<?= site_url('pembeli/store') ?>" method="post" enctype="multipart/form-data">
+        <div class="mb-3 row">
+            <label for="html5-text-input" class="col-md-2 col-form-label">Nama</label>
+            <div class="col-md-10">
+                <input class="form-control" name="nama" type="text" value="" id="html5-text-input" required />
+            </div>
         </div>
-        <div class="card-body">
-            <form action="<?= site_url('pembeli/store') ?>" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="">Nama Pembeli</label>
-                    <input type="text" name="nama" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="">Tanggal Lahir</label>
-                    <input type="date" name="tanggal_lahir" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="">Foto</label>
-                    <input type="file" name="foto" class="form-control" required>
-                </div>
-                <button class="btn btn-success">Tambah Data</button>
-            </form>
+        <div class="mb-3 row">
+            <label for="html5-date-input" class="col-md-2 col-form-label">Tanggal Lahir</label>
+            <div class="col-md-10">
+                <input class="form-control" type="date" name="tanggal_lahir" value="" id="html5-date-input" />
+            </div>
         </div>
-    </div>
+        <div class="mb-3 row">
+            <label for="html5-date-input" class="col-md-2 col-form-label">Foto</label>
+            <div class="col-md-10">
+                <input class="form-control" name="foto" type="file" id="formFile" />
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-md-2 col-form-label"></label>
+            <div class="col-md-10">
+                <a href="<?= base_url('pembeli'); ?>" type="button" class="btn btn-secondary">Kembali</a>
+                <button type="submit" class="btn btn-primary">Tambah data</button>
+            </div>
+        </div>
+    </form>
 </div>
 <?= $this->endSection(); ?>
