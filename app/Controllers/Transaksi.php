@@ -11,15 +11,6 @@ use CodeIgniter\Controller;
 
 class Transaksi extends Controller
 {
-    public function index2()
-    {
-        $data['title']     = 'Data transaksi';
-        $model = new TransaksiModel();
-        $data['transaksi'] = $model->getTransaksiJoin(); // Ambil data dari model
-
-        return view('transaksi/index', $data); // Kirim data ke view
-    }
-
     protected $pembeliModel;
     protected $transaksiModel;
     protected $pegawaiModel;

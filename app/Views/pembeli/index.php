@@ -1,9 +1,8 @@
 <?= $this->extend('layouts/main'); ?>
-
 <?= $this->section('content'); ?>
-
 <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
     <a href="<?= site_url('pembeli/create') ?>" class="btn btn-success mb-1">Tambah</a> &nbsp;&nbsp;&nbsp;
+
     <!-- Search -->
     <div class="navbar-nav flex-row align-items-center ms-auto">
         <div class="nav-item d-flex align-items-center">
@@ -16,7 +15,6 @@
         </div>
     </div>
     <!-- /Search -->
-
 
 </div>
 
