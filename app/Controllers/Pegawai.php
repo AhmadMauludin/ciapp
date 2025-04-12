@@ -36,7 +36,10 @@ class Pegawai extends Controller
 
     public function create()
     {
-        return view('pegawai/create');
+        $data = [
+            'title'  => 'Tambah pegawai',
+        ];
+        return view('pegawai/create', $data);
     }
 
     public function store()
@@ -57,6 +60,10 @@ class Pegawai extends Controller
 
     public function edit($id)
     {
+        $data = [
+            'title'  => 'Tambah pegawai',
+        ];
+
         $model = new PegawaiModel();
         $data['pegawai'] = $model->find($id);
         return view('pegawai/edit', $data);

@@ -37,6 +37,14 @@ $routes->get('pembeli/edit/(:num)', 'Pembeli::edit/$1', $penjualan);
 $routes->post('pembeli/update/(:num)', 'Pembeli::update/$1', $penjualan);
 $routes->get('pembeli/delete/(:num)', 'Pembeli::delete/$1', $penjualan);
 
+// diskon
+$routes->get('diskon', 'diskon::index', $allRole);
+$routes->get('diskon/create', 'diskon::create', $admin);
+$routes->post('diskon/store', 'diskon::store', $admin);
+$routes->get('diskon/edit/(:num)', 'diskon::edit/$1', $admin);
+$routes->post('diskon/update/(:num)', 'diskon::update/$1', $admin);
+$routes->get('diskon/delete/(:num)', 'diskon::delete/$1', $admin);
+
 // barang
 $routes->get('barang', 'barang::index', $allRole);
 $routes->get('barang/create', 'barang::create', $pengadaan);

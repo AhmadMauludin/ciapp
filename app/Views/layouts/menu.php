@@ -21,6 +21,13 @@
     </li>
 
     <li class="menu-item">
+        <a href="<?= site_url('/diskon') ?>" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-purchase-tag"></i>
+            <div data-i18n="Analytics">diskon</div>
+        </a>
+    </li>
+
+    <li class="menu-item">
         <a href="<?= site_url('/barang') ?>" class="menu-link">
             <i class="menu-icon tf-icons bx bx-package"></i>
             <div data-i18n="Analytics">Barang</div>
